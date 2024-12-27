@@ -1,42 +1,63 @@
+####################################################################################################################################################################
+####################################################################################################################################################################
 Structured TODO:
 
-Algorithms to attempt:
+Step 0 - Apply suggested changes to original report
+Step 1.a - Perform Data Preprocessment
+Step 1.b - Identify and quarantine Customer Islands
+Step 2 - Perform RFM analysis
+####################################################################################################################################################################
+Algorithms to use:
 - K-Medoids, (with Hierachical Clustering seeds). (use Jesus F., Neves C. Data Analysis slides as reference)
 - DBSCAN
 - SOM
 - LCA (find reference)
 - RFM
+####################################################################################################################################################################
+Step 0 - Apply suggested changes to original report
 
-Step 0 - Apply suggested changes to original:
+Make note of any new findings, and take the moment to re-balance reporting strategy for second part.
+####################################################################################################################################################################
+Step 1.a - Perform data preprocessment 
 
-Apply the suggested changes to the original report (BE BRIEF!), and make note of the new findings regarding promotions.
+Preprocess the data, this includes imputation, scaling and outlier identification. With respect to outliers, care must be given to their identification, using both univariate, as well as multivariate methods. 
 
-Step 1 - :
+Of critical importance, is to set aside these aberrant values in their own dataframe for profiling using the obtained clusters, later on, after clustering is complete. 
+####################################################################################################################################################################
+Step 1.b - Identify and quarantine Customer Islands
 
-Before we do any of this we should immediately exclude the groups that we have detected as homogeneous, as this will assist our clustering performance. This includes, "one-time shoppers", "whales" of various kinds, and odd segments like the over "60 year old's".
+Before we do any of this we should immediately exclude the groups that we have detected as homogeneous, as this will assist our clustering performance. This includes, "one-time shoppers", "whales" of various kinds, and other odd segments like the over "60 year old's", and all one-time-shoppers.
 
-TODO: review EDA in search of such small islands, and schedule them for removal. Crucially they must eventually be compared against any profiles that we end up reaching.
+To this end, review EDA in search of such small islands, and schedule them for removal. Crucially they must eventually be compared against any profiles that we end up reaching.
 
-Based on Chapter 13 of "The book",
-
-Step 2:
+Based on Chapter 13 of "Data Mining Techniques - For Marketing, Sales, and Customer",
+####################################################################################################################################################################
+Step 2 -  Perform RFM analysis
 
 The distribution of cumulative total amount spent, as shown in the Lorenz Curve, informs us that there is a pressing need to understand if clusters are viable at all levels of expenditure.
 
 TODO: Start with RFM analysis to bucket customers into one of nine buckets ranging from 111 to 333; add this feature to the customers, profile. Then perform clustering.
 
-Step 3:
+The following reasoning was provided by ChatGPT on the question of considering one-time customers in the RFM analysis.
 
-Preprocess the data, putting outliers aside. To this end, use both unidimensional as well as multidimensional methods.
+"Exclude One-Time Shoppers, if your goal is to identify high-value, long-term customers for segmentation and targeted campaigns."
 
+As this makes intuitive sense, we decided to implement this strategy without diving deeper into any reference material. 
+####################################################################################################################################################################
+####################################################################################################################################################################
+NOTES
 
+A. SEGMENTATIONS UNDER CONSIDERATION 
+B. PROMOTION CATEGORY NOMENCLATURE CHANGE CONSIDERATIONS
+
+####################################################################################################################################################################
+A. SEGMENTATIONS UNDER CONSIDERATION 
 
 GEOGRAPHY
 PROFILING VARIABLES: REGION, CITY, 
 CLUSTERING VARIABLES: CUISINE AMOUNTS, 
 
 This perspective seeks to answer the question how do cuisine preferences vary between 
-
 
 ORDER PERSPECTIVE
 PROFILING VARIABLES: PROMO, PAYMETHOD 
@@ -48,5 +69,12 @@ TIME
 PROFILING VARIABLES: REGION, CITY, 
 CLUSTERING VARIABLES: HOUR, DOW, 
 
+####################################################################################################################################################################
+B. PROMOTION CATEGORY NOMENCLATURE CHANGE CONSIDERATIONS 
+
+Why is NOPROMO a better label than OTHER?
+
+'-' was changed to 'NOPROMO' to signify the absence of the use of any promotion by the customer. This makes more intuitive sense than 'OTHER' - which was the alternative considered - as that would imply that every customer would have used at least one promotion.
+####################################################################################################################################################################
 
 
