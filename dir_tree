@@ -1,0 +1,11 @@
+This project expects this structure, please consider maintaining it after pulling.
+
+DataMining/
+├── scripts/
+├── data/
+├── tools/
+├── bucket/
+├── delivery/
+├── reports/
+└── todo.txt
+

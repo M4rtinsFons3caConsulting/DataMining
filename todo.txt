@@ -1,0 +1,52 @@
+Structured TODO:
+
+Algorithms to attempt:
+- K-Medoids, (with Hierachical Clustering seeds). (use Jesus F., Neves C. Data Analysis slides as reference)
+- DBSCAN
+- SOM
+- LCA (find reference)
+- RFM
+
+Step 0 - Apply suggested changes to original:
+
+Apply the suggested changes to the original report (BE BRIEF!), and make note of the new findings regarding promotions.
+
+Step 1 - :
+
+Before we do any of this we should immediately exclude the groups that we have detected as homogeneous, as this will assist our clustering performance. This includes, "one-time shoppers", "whales" of various kinds, and odd segments like the over "60 year old's".
+
+TODO: review EDA in search of such small islands, and schedule them for removal. Crucially they must eventually be compared against any profiles that we end up reaching.
+
+Based on Chapter 13 of "The book",
+
+Step 2:
+
+The distribution of cumulative total amount spent, as shown in the Lorenz Curve, informs us that there is a pressing need to understand if clusters are viable at all levels of expenditure.
+
+TODO: Start with RFM analysis to bucket customers into one of nine buckets ranging from 111 to 333; add this feature to the customers, profile. Then perform clustering.
+
+Step 3:
+
+Preprocess the data, putting outliers aside. To this end, use both unidimensional as well as multidimensional methods.
+
+
+
+GEOGRAPHY
+PROFILING VARIABLES: REGION, CITY, 
+CLUSTERING VARIABLES: CUISINE AMOUNTS, 
+
+This perspective seeks to answer the question how do cuisine preferences vary between 
+
+
+ORDER PERSPECTIVE
+PROFILING VARIABLES: PROMO, PAYMETHOD 
+CLUSTERING VARIABLES: N ORDER, N_PRODUCT, AVG_AMT_PER, CUISINES 
+
+This perspective seeks to answer the question how does customer behavior vary as a function of cuisine.
+
+TIME
+PROFILING VARIABLES: REGION, CITY, 
+CLUSTERING VARIABLES: HOUR, DOW, 
+
+
+

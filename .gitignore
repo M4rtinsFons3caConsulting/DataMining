@@ -1,0 +1,8 @@
+Ignore the contents of the "data" directory
+data/
+
+Ignore a specific script
+start_lab.sh
+
+Ignore any directories named ".ipynb_checkpoints/"
+.ipynb_checkpoints/
