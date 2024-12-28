@@ -2,10 +2,11 @@
 ####################################################################################################################################################################
 Structured TODO:
 
-Step 0 - Apply suggested changes to original report
-Step 1.a - Perform Data Preprocessment
-Step 1.b - Identify and quarantine Customer Islands
+Step 0 - Apply suggested changes to original report (DONE)
+Step 1.a - Identify and quarantine Customer Islands
+Step 1.b - Perform Data Preprocessment
 Step 2 - Perform RFM analysis
+
 ####################################################################################################################################################################
 Algorithms to use:
 - K-Medoids, (with Hierachical Clustering seeds). (use Jesus F., Neves C. Data Analysis slides as reference)
@@ -13,18 +14,13 @@ Algorithms to use:
 - SOM
 - LCA (find reference)
 - RFM
-####################################################################################################################################################################
+
+###################################################################### DONE ########################################################################################
 Step 0 - Apply suggested changes to original report
 
 Make note of any new findings, and take the moment to re-balance reporting strategy for second part.
-####################################################################################################################################################################
-Step 1.a - Perform data preprocessment 
-
-Preprocess the data, this includes imputation, scaling and outlier identification. With respect to outliers, care must be given to their identification, using both univariate, as well as multivariate methods. 
-
-Of critical importance, is to set aside these aberrant values in their own dataframe for profiling using the obtained clusters, later on, after clustering is complete. 
-####################################################################################################################################################################
-Step 1.b - Identify and quarantine Customer Islands
+###################################################################### DONE ########################################################################################
+Step 1.a - Identify and quarantine Customer Islands
 
 Before we do any of this we should immediately exclude the groups that we have detected as homogeneous, as this will assist our clustering performance. This includes, "one-time shoppers", "whales" of various kinds, and other odd segments like the over "60 year old's", and all one-time-shoppers.
 
@@ -32,7 +28,21 @@ To this end, review EDA in search of such small islands, and schedule them for r
 
 Based on Chapter 13 of "Data Mining Techniques - For Marketing, Sales, and Customer",
 ####################################################################################################################################################################
-Step 2 -  Perform RFM analysis
+Step 1.b - Perform data preprocessment 
+
+Preprocess the data, this includes imputation, scaling and outlier identification. With respect to outliers, care must be given to their identification, using both univariate, as well as multivariate methods. 
+
+Of critical importance, is to set aside these aberrant values in their own dataframe for profiling using the obtained clusters, later on, after clustering is complete. 
+####################################################################################################################################################################
+Step 3 - Prepare boilerplate code for:
+- RFM
+- Factor Analysis (FA)
+- K-Medoids, (with Hierachical Clustering seeds). (use Jesus F., Neves C. Data Analysis slides as reference)
+- DBSCAN
+- SOM
+- LCA (find reference)
+- RFM
+####################################################################################################################################################################Step 2 -  Step Step 4 - Perform RFM analysis
 
 The distribution of cumulative total amount spent, as shown in the Lorenz Curve, informs us that there is a pressing need to understand if clusters are viable at all levels of expenditure.
 
@@ -44,7 +54,7 @@ The following reasoning was provided by ChatGPT on the question of considering o
 
 As this makes intuitive sense, we decided to implement this strategy without diving deeper into any reference material. 
 ####################################################################################################################################################################
-####################################################################################################################################################################
+
 NOTES
 
 A. SEGMENTATIONS UNDER CONSIDERATION 
