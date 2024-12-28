@@ -36,7 +36,7 @@ Of critical importance, is to set aside these aberrant values in their own dataf
 ####################################################################################################################################################################
 Step 3 - Prepare boilerplate code for:
 - RFM
-- Factor Analysis (FA)
+- Factor Analysis (FA) DONE
 - K-Medoids, (with Hierachical Clustering seeds). (use Jesus F., Neves C. Data Analysis slides as reference)
 - DBSCAN
 - SOM
