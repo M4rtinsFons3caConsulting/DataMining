@@ -1,0 +1,105 @@
+<3 
+
+Test for:
+n_factors = [2, 5]
+rotations = ['promax', 'oblimin', 'quartimin'] # Oblique rotations assume correlation between the features.
+
+Use only cuisine variables.
+############################ INSTALL ################################
+
+conda install -c ets factor_analyzer
+
+############################ BOILER ################################
+import pandas as pd
+from factor_analyzer import FactorAnalyzer, calculate_kmo, calculate_bartlett_sphericity
+
+# Load data
+data = (...)
+
+# A. Data suitability tests
+
+# Perform KMO and Bartlett's Test
+kmo_all, kmo_model = calculate_kmo(data)
+chi_square_value, p_value = calculate_bartlett_sphericity(data)
+
+print(f"KMO: {kmo_model}")  # A value closer to 1 is better (>=0.60 is acceptable)
+print(f"Bartlett's p-value: {p_value}")  # p-value should be < 0.05 for factor analysis to be appropriate
+
+# B. Perform Factor Analysis
+
+fa = FactorAnalyzer(method='ml', n_factors=3, rotation='oblimin')  # You can adjust n_factors based on your choice
+fa.fit(data)
+
+# C. Solution suitability assessment
+
+# Check the factor sufficiency score
+sufficiency_score = fa.sufficiency(df_features.shape[0])
+
+print(f"Factor Sufficiency: \n {list(zip(['statistic', 'degrees', 'pvalue'], sufficiency_score)}" ) # p-value < .1
+ 
+"""
+References
+
+[1] Lawley, D. N. and Maxwell, A. E. (1971). Factor Analysis as a
+
+    Statistical Method. Second edition. Butterworths. P. 36.
+"""
+
+# Check Eigenvalues and Plot Scree
+eigenvalues = fa.get_eigenvalues() 
+print("Eigenvalues:", eigenvalues) # Select number of factors for eigenvalue above 1.
+
+fa.plot_scree() # Select number of factors at the elbow
+
+# Analyze Factor Loadings
+loadings = fa.loadings_
+print("Factor Loadings:")
+print(loadings) # Look for, High loadings (typically > 0.4 or 0.5) on a specific factor; Low cross-loadings between factors. 
+
+
+# Check Communalities and Uniquenesses
+communalities = fa.get_communalities()
+print("Communalities:")
+print(communalities) # Look for high communalities (typically > 0.50)
+
+uniqueness = fa.get_uniquenesses()
+print("Uniqueness:")
+print(uniqueness) # Look for low-values (typically < 0.5)
+
+factor_var = fa.get_factor_variance()
+print("Factor Variance:")
+print(factor_var) # Look for high communalities (typically > 0.50)
+
+print(factor_cov)
+
+################################ CHECKLIST ####################################
+Here’s a summarized list of criteria for selecting a factor analysis solution:
+
+1. **Eigenvalues**: Retain factors with eigenvalues > 1 (Kaiser criterion).
+2. **Scree Plot**: Look for the "elbow" point to determine the number of factors.
+3. **Factor Loadings**: Retain factors with significant loadings (typically > 0.40–0.50).
+4. **Factor Structure**: Ensure clear and distinct factor loadings, avoid cross-loadings.
+5. **Number of Factors**: Align the number of factors with theoretical framework and model fit.
+6. **Factor Rotation**:
+   - **Orthogonal**: Use Varimax if factors are uncorrelated.
+   - **Oblique**: Use Promax if factors are correlated.
+7. **Communality**: Ensure high initial and final communalities (preferably > 0.50).
+8. **Cross-Validation**: Replicate the solution with different samples if possible.
+9. **Parsimony**: Keep the model simple and avoid overfitting.
+10. **Sample Size**: Ensure sufficient sample size (at least 5–10 participants per variable).
+11. **Theoretical Interpretability**: The solution should be logically interpretable and aligned with the research context.
+12. **Factor Correlation**: For oblique rotation, check for high correlations between factors (avoid redundancy).
+
+##################################### MISCELLANEOUS ############################
+
+Factor suggestions:
+
+Spicy food
+Sweet food
+Healthy food
+Fast food
+Gourmet food
+Vegetarian or vegan preferences
+Preference for different cuisines (e.g., Italian, Asian, American)
+
+#################################################################################
