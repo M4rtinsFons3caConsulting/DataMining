@@ -5,14 +5,30 @@ Structured TODO:
 Step 0 - Apply suggested changes to original report (DONE)
 Step 1.a - Identify and quarantine Customer Islands
 Step 1.b - Perform Data Preprocessment
-Step 2 - Perform RFM analysis
+Step 2 - PCA on multicolinear features
+Step 3 - Perform FA on cuisines with oblique rotation
+Step 4 - Perform RFM analysis 
+# Iterative Steps
+Step 4 - Create the datasets for each perspective under hypothesis
+Step 5 - Cluster the datasets, and interpret them 
+Step 6 - Profile the solutions
+*repeat for each perspective, until all clustering solutions are finalized*
+Step 7 - Consider application of findings, both from quick win, as well as long term marketing perspectives.
+Step 8 - Report findings
+
+
+Estes são os steps vida.
+
+Revê o 2; Tenta o 3. Salta o 4. 
+
+Depois, faz do 4 ao 6 para Kmeans com Hierachical CLustering numa para uma perspetiva qualquer, se calhar usando as counts, seja as PCA, e as variaveis de aggregaçaõ tipo total e pct chain, ainda sem usar as cuisines (a menos que a fa tenha sido um sucesso estrondoso... ). E podes fazer profilling com o pay method, e o last promo maybe.
 
 ####################################################################################################################################################################
 Algorithms to use:
 - K-Medoids, (with Hierachical Clustering seeds). (use Jesus F., Neves C. Data Analysis slides as reference)
 - DBSCAN
 - SOM
-- LCA (find reference)
+- LCA (find reference) 
 - RFM
 
 ###################################################################### DONE ########################################################################################
@@ -37,10 +53,10 @@ Of critical importance, is to set aside these aberrant values in their own dataf
 Step 3 - Prepare boilerplate code for:
 - RFM
 - Factor Analysis (FA) DONE
-- K-Medoids, (with Hierachical Clustering seeds). (use Jesus F., Neves C. Data Analysis slides as reference)
+- K-Medoids, (with Hierachical Clustering seeds). (use Jesus F., Neves C. Data Analysis slides as reference) DONE
 - DBSCAN
 - SOM
-- LCA (find reference)
+- LCA (find reference) 
 - RFM
 ####################################################################################################################################################################Step 2 -  Step Step 4 - Perform RFM analysis
 
@@ -63,7 +79,8 @@ B. PROMOTION CATEGORY NOMENCLATURE CHANGE CONSIDERATIONS
 ####################################################################################################################################################################
 A. SEGMENTATIONS UNDER CONSIDERATION 
 
-GEOGRAPHY
+1. GEOGRAPHY CUISINE
+
 PROFILING VARIABLES: REGION, CITY, 
 CLUSTERING VARIABLES: CUISINE AMOUNTS, 
 

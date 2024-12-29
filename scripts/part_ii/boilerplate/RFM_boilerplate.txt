@@ -1,0 +1,53 @@
+import pandas as pd
+import numpy as np
+
+# Sample Data: Replace this with your actual dataset
+# Columns: 'CustomerID', 'first_order', 'last_order', 'n_purchases', 'total_amt'
+data = {
+    'CustomerID': [1, 2, 3, 4],
+    'first_order': ['2022-01-01', '2021-05-15', '2023-02-01', '2020-11-10'],
+    'last_order': ['2023-12-01', '2023-08-20', '2023-12-15', '2023-06-18'],
+    'n_purchases': [5, 10, 3, 8],
+    'total_amt': [500, 1500, 300, 800]
+}
+
+# Convert data into a DataFrame
+df = pd.DataFrame(data)
+
+# Convert date columns to datetime format
+df['first_order'] = pd.to_datetime(df['first_order'])
+df['last_order'] = pd.to_datetime(df['last_order'])
+
+# Assume the current date is today's date
+current_date = pd.to_datetime('2024-12-28')
+
+# Calculate Recency (days since the last order)
+df['Recency'] = (current_date - df['last_order']).dt.days
+
+# Frequency is already provided as n_purchases (number of purchases)
+df['Frequency'] = df['n_purchases']
+
+# Monetary value is already provided as total_amt (total amount spent)
+df['Monetary'] = df['total_amt']
+
+# Normalize the values for Recency, Frequency, and Monetary using quantiles (optional)
+df['R_Score'] = pd.qcut(df['Recency'], 5, labels=[5, 4, 3, 2, 1])  # Lower recency is better
+df['F_Score'] = pd.qcut(df['Frequency'], 5, labels=[1, 2, 3, 4, 5])  # Higher frequency is better
+df['M_Score'] = pd.qcut(df['Monetary'], 5, labels=[1, 2, 3, 4, 5])  # Higher monetary is better
+
+# Create an RFM score by concatenating R, F, and M scores
+df['RFM_Score'] = df['R_Score'].astype(str) + df['F_Score'].astype(str) + df['M_Score'].astype(str)
+
+# View the RFM dataframe
+print(df)
+
+# Optional: Assigning segments based on RFM Score
+df['Segment'] = 'Low Value'
+df.loc[df['RFM_Score'] == '555', 'Segment'] = 'High Value'
+df.loc[df['RFM_Score'].str.startswith('1'), 'Segment'] = 'At Risk'
+df.loc[df['RFM_Score'].str.startswith('5'), 'Segment'] = 'Loyal'
+df.loc[df['RFM_Score'].str.startswith('3'), 'Segment'] = 'Potential'
+
+# Final RFM DataFrame with segmentation
+print(df)
+
