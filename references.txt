@@ -1,0 +1,20 @@
+Local Outlier Factor 
+Breunig, M. M., Kriegel, H. P., Ng, R. T., & Sander, J. (2000). LOF: Identifying density-based local outliers. Proceedings of the 2000 ACM SIGMOD International Conference on Management of Data (pp. 93–104). ACM. https://doi.org/10.1145/342009.335388
+
+Spectral Clustering
+Luxburg, U. V. (2007). A tutorial on spectral clustering. Statistics and Computing, 17(4), 395–416. https://doi.org/10.1007/s11222-007-9033-z
+
+Gower Distance
+Gower, J. C. (1971). A General Coefficient of Similarity and Some of Its Properties. Biometrics, 27(4), 857–871. https://doi.org/10.2307/2528823
+
+Sparse Principal Component Analysis
+Zou, H., Hastie, T., & Tibshirani, R. (2006). Sparse principal component analysis. Journal of Computational and Graphical Statistics, 15(2), 265–286. https://doi.org/10.1198/106186006X113430
+
+Non Negative Matrix Factorization
+Lee, D. D., & Seung, H. S. (1999). Learning the parts of objects by non-negative matrix factorization. Nature, 401(6755), 788–791. https://doi.org/10.1038/44565
+
+Gaussian Mixture Models
+Reynolds, D. A. (2009). Gaussian mixture models. In S. Z. Li & A. Jain (Eds.), Encyclopedia of biometrics (pp. 659–663). Springer. https://doi.org/10.1007/978-0-387-73003-5_196
+
+
+
