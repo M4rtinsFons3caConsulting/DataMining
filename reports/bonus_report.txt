@@ -1,0 +1,58 @@
+## REPORT ## 
+
+## Introduction
+
+This application makes use of the Plotly library to produce dynamic and interactive data visualizations, in conjunction with the Bootstrap framework to build a responsive and accessible HTML interface, ensuring compatibility with modern web browsers. All necessary files are contained within the accompanying directory, and users can easily get started by following the README file instructions.
+
+It provides end-users with a simple and robust tool to gain a comprehensive understanding of the characteristics of the ABCDEats dataset. To further enable decision-makers to explore the data freely, the application leverages column filtering and row drill-down capabilities. Allowing for insights into individual feature characteristics, their interrelationships, and actionable customer segment insights derived through advanced clustering techniques.
+
+## Structure
+
+The visualizations included in the dashboard belong to one of two types, Exploratory Analysis and Clustering, below in more detail. 
+
+    Exploratory Analysis:
+        - Histogram (or Barplots) and Boxplot of single variables
+        - Stacked Histograms, by categorical variables. 
+        - Pairplots, of pairwise variables
+        - Three Way ANOVA of select variables
+        
+    Clustering:
+        - By RFM - using RFM analysis and KMeans
+        - By City - using Spectral Clustering and KMeans
+        - By Cuisines - sparse PCA and Gaussian Mixture Models
+        - By Time - using Non-Negative Matrix Factorization and Self-Organizing Maps
+     
+## Features
+
+Noteworthy features of this implementation include:
+    
+    ## Column Selector
+        Allows the user to select the columns they wish to include in visualizations.
+    
+    ## Slicer based Drill-Down
+        Allows the user to slice the rows of selected columns based on valid set operations for the variable type.
+    
+    ## Conditional Filter
+        Allows the user to define conditions to apply over the observations.
+    
+    ## Customer behavior prediction
+        Allows the user to provide as inputs values for clustering variables, and receive as output a comprehensive prediction of customer behavior based on cluster predictions.
+        
+## RESULTS
+
+        Explain how the application helps users explore EDA results and customer segmentation.
+        Provide examples of insights or patterns that can be derived using the application.
+        Include a few key screenshots or diagrams to illustrate the user interface or main features (if space allows within the 3-page limit, otherwise add to the Annex).
+        
+## ANNEX
+
+Implementation Details
+            Main Python libraries used (no need to list basic libraries such as numpy, pandas, sklearn; mention only those relating to building the application itself)
+            Instructions for how to run, install, or deploy the app
+            Link to GitHub repository (Optional, only if applicable)
+            Link to deployed app (Optional, only if applicable)
+        Screenshots or Visuals
+            Include a few key screenshots or diagrams to illustrate the user interface or main features.
+            
+############
+
